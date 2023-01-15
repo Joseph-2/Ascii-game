@@ -7,11 +7,11 @@ class Player{
         this.yCor = yCor;
     }
 
-    public int XCor(){
+    public int xCor(){
         return xCor;
     }
 
-    public int YCor(){
+    public int yCor(){
         return yCor;
     }
 
