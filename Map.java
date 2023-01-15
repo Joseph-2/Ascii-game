@@ -3,12 +3,14 @@ class Map{
     private final int width;
     private final Player player;
     private final Goal goal;
+    private final Enemy enemy;
 
-    public Map(int length, int width, Player player, Goal goal){
+    public Map(int length, int width, Player player, Goal goal, Enemy enemy){
         this.length = length;
         this.width = width;
         this.player = player;
         this.goal = goal;
+        this.enemy = enemy;
     }
     public String generateMap(){
         StringBuilder map = new StringBuilder();
@@ -23,7 +25,11 @@ class Map{
                 }
                 else if (gridX == goal.xCor() && gridY == goal.yCor()){
                     map.append(goal.symbol());
-                }else{map.append(" . ");}
+                }
+                else if (gridX == enemy.xCor() && gridY == enemy.yCor()){
+                    map.append(" E ");
+                }
+                else{map.append(" . ");}
 
                 gridX++;
             }
